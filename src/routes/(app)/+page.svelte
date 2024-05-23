@@ -54,7 +54,7 @@
 	let mediaStream: MediaStream;
 	async function toggleRecording() {
 		mediaStream = await navigator.mediaDevices.getUserMedia({
-			audio: { deviceId: selectedAudioInputDevice.deviceId }
+			audio: { deviceId: selectedAudioInputDevice?.deviceId ?? 'default' }
 		});
 		if (!recorder) {
 			recorder = new MediaRecorder(mediaStream);
