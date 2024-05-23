@@ -46,6 +46,7 @@
 			(d) => d.kind === 'audioinput'
 		);
 		selectedAudioInputDevice = audioInputDevices[0];
+		console.log(audioInputDevices, selectedAudioInputDevice);
 	}
 
 	let recorder: MediaRecorder;
@@ -111,7 +112,7 @@
 </script>
 
 {#if !videoSrc}
-	<div class="grid grid w-full max-w-sm items-center gap-1.5 p-4">
+	<div class="grid w-full max-w-sm content-start items-center gap-1.5 p-4">
 		<Label for="video">Choose a video file</Label>
 		<Input id="video" type="file" on:input={onFileChoose} accept="video/*" />
 	</div>

@@ -4,6 +4,7 @@ import UnoCSS from 'unocss/vite';
 import extractorSvelte from '@unocss/extractor-svelte';
 import presetIcons from '@unocss/preset-icons';
 import presetWebFonts from '@unocss/preset-web-fonts';
+import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
 	plugins: [
@@ -12,6 +13,7 @@ export default defineConfig({
 			presets: [presetWebFonts(), presetIcons()]
 		}),
 		sveltekit()
+		// basicSsl({})
 	],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
